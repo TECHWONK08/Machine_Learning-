@@ -1,0 +1,31 @@
+It learns the relationship between house sizes and prices from example data, then predicts the price of a house with a new size.
+
+from sklearn.linear_model import LinearRegression
+
+# 1. Training data
+# House sizes in square feet
+X = [
+    [500],
+    [800],
+    [1000],
+    [1200],
+    [1500]
+]
+
+# House prices in lakh rupees
+y = [20, 32, 40, 48, 60]
+
+# 2. Create the model
+model = LinearRegression()
+
+# 3. Train the model
+model.fit(X, y)
+
+# 4. Predict the price of a new house
+new_house = [[1300]]
+
+prediction = model.predict(new_house)
+
+# 5. Display the result
+print("House Size:", new_house[0][0], "sq ft")
+print("Predicted Price: ₹", prediction[0], "lakh")
